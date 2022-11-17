@@ -1,5 +1,5 @@
 # TPG
-**Time as Prompt for A Geography-aware Next Location Recommendation Framework** (*WWW*'2023 Under Review) only for demostration.
+**Time as Prompt for A Geography-aware Next Location Recommendation Framework** (*WWW*'2023 Submitted) only for demostration.
 
 Yan Luo, **Haoyi Duan**, Ye Liu and CHUNG Fu-Lai
 
@@ -20,13 +20,11 @@ Figure 1. is an illustration of how **TPG** performs **next location recommendat
 
 ## Framework
 
-Each check-in $c_{i}^u = (u, t_i, p_i)$ is a user, POI, time tuple, which denotes a behavior that a user $u$ visits POI $p_i$ at time $t_i$. Each POI $p_i$ has its own geographic coordinates $(x_i, y_i)$. Each user $u$ has a sequence of historical check-ins $C_{1 \rightarrow n}^u = \{c_{i}^u\}_{i=1}^n$. Given the historical check-in sequences of users, the goal of next location recommendation is to predict the next POI $\rho_{t_{n+1}}$ that a certain user $u$ will visit at a certain time $t_{n+1}$.
-
 ![image-20221118011716980](images/frame.png)
 
 <center style="color:#000000">Figure 2.</center>
 
-The overall architecture of our TPG framework is described in Figure 2. Based on the transformer's encoder-decoder structure, TPG can be divided into three parts, i.e., **geography-aware encoder**, **history encoder**, and **temporal prompt-based decoder**. For each check-in, the geographic coordinate of POI can be fed into the geography-aware encoder to get geographical representation $e_i^{geo}$. The historical check-in sequences including POI, user, and time information are then fed into the multi-modal embedding module to generate hidden representations $\{e_i^{POI}\}_{i=1}^n$, $\{e_i^{user}\}_{i=1}^n$, and $\{e_i^{time}\}_{i=1}^n$. Together with $\{e_i^{geo}\}_{i=1}^n$ from the geography-aware encoder, these representations are processed by a history encoder to generate user travel preference representation. Using temporal information of $t_{n+1}$ as prompt, the temporal prompt query and user travel preference memory are then forwarded to the decoder, which is capable of generating more accurate predictions for the next locations.
+The overall architecture of our TPG framework is described in Figure 2. Based on the transformer's encoder-decoder structure, TPG can be divided into three parts, i.e., **geography-aware encoder**, **history encoder**, and **temporal prompt-based decoder**. 
 
 ## Experiments and Evaluations
 
