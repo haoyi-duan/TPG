@@ -1,5 +1,5 @@
 # TPG
-**Time as Prompt for A Geography-aware Next Location Recommendation Framework** (*WWW*'2023 Submitted) only for demostration.
+**Time as Prompt for A Geography-aware Next Location Recommendation Framework** (*WWW*'2023 Submitted) only for demonstration.
 
 Yan Luo, **Haoyi Duan**, Ye Liu and CHUNG Fu-Lai
 
