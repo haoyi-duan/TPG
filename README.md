@@ -1,7 +1,10 @@
 # TPG
-**Time as Prompt for A Geography-aware Next Location Recommendation Framework** (*WWW*'2023 Under Review) only for demonstration.
 
-Yan Luo, **Haoyi Duan**, Ye Liu and CHUNG Fu-Lai
+### **Timestamps as Prompts for the Geography-aware Location Recommendation** 
+
+###### *CIKM*'2023
+
+
 
 ## Introduction
 
@@ -26,18 +29,45 @@ Figure 1. is an illustration of how **TPG** performs **next location recommendat
 
 The overall architecture of our TPG framework is described in Figure 2. Based on the transformer's encoder-decoder structure, TPG can be divided into three parts, i.e., **geography-aware encoder**, **history encoder**, and **temporal prompt-based decoder**. 
 
-## Experiments and Evaluations
+## Requirements
 
-We compare the performance of our proposed TPG with baselines. Tables 2 reports the performance of TPG and six baselines in terms of Recall@k and NDCG@k on four real world datasets. The “Improve” column refers to the improvement rate of TPG compared to the second best model.
+```c++
+pip3 install -r requirements.txt
+```
 
-![image-20221118012257840](images/image-20221118012257840.png)
+## Usage
 
-By introducing temporal prompt, our model has a capability that no other POI recommendation model has. TPG is able to predict next location even when some most recent check-in behavior is masked. In other words, TPG can make interval prediction. Relevant results are given in Table 3.We here mask one ("int. 1" in Table 3), two ("int. 2" in Table 3), and three ("int. 3" in Table 3) most recent check-in(s) of users to test TPG’s performance on interval prediction task on all datasets.
+1. Clone this repo
 
-![image-20221118012547918](images/image-20221118012547918.png)
+   ```
+   git clone https://github.com/haoyi-duan/TPG.git
+   ```
 
-## Conclusion
+2. Training
 
-In this paper, we revisit next location recommendation problem, finding that most methods ignore the prerequisite of knowing the exact time for the POI which needs to be predicted in real world applications. Therefore, we redefine next location recommendation, arguing that timestamp of next location is a necessary information. We propose TPG, a temporal prompt-based and geography-aware framework, for next location recommendation. We showed how to use time as prompt and how to avoid the hard boundary problem with regard to geographic coordinates of check-ins. The experimental results on four benchmark datasets demonstrated the superiority of TPG comparing with other state-of-the-art methods. The results indicated that temporal signal of next location is of great significance. We also demonstrate through ablation studies that our proposed shifted window mechanism is capable of overcoming defects of previous approaches. 
+   ```c
+   cd ./Bigscity-LibCity
+   python run_model.py --task traj_loc_pred --dataset foursquare_nyc --model TPG
+   ```
 
-As for future work, we plan to transfer prompt into more intelligent one. Large-scale pre-trained models from NLP communities have demonstrated unlimited potential.We can consider to combine POI recommendation with language pre-trained models through prompt.
+## Acknowledgement
+
+Our code was based on the ``Unified Library and Performance Benchmark`` -- LibCity. 
+
+## Citation
+
+```
+TPG citation
+```
+
+LibCity citation
+
+```
+@article{libcitylong,
+  title={Towards Efficient and Comprehensive Urban Spatial-Temporal Prediction: A Unified Library and Performance Benchmark}, 
+  author={Jingyuan Wang and Jiawei Jiang and Wenjun Jiang and Chengkai Han and Wayne Xin Zhao},
+  journal={arXiv preprint arXiv:2304.14343},
+  year={2023}
+}
+```
+
