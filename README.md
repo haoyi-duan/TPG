@@ -43,7 +43,13 @@ pip3 install -r requirements.txt
    git clone https://github.com/haoyi-duan/TPG.git
    ```
 
-2. Training
+2. Download Data
+
+   Before run our TPG model, please make sure you download at least one dataset and put it in directory `./raw_data/`. The dataset link is [BaiduDisk with code cikm](https://pan.baidu.com/s/1g4aluGwC_2jUwtym5pfoOA).
+
+3. Training
+
+   The script `run_model.py` is used for training and evaluating a single model in LibCity, e.g., TPG. When run the `run_model.py`, you must specify the following three parameters, namely **task**, **dataset** and **model**.
 
    ```c
    cd ./Bigscity-LibCity
