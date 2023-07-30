@@ -1,0 +1,1 @@
+python run_model.py --task traj_loc_pred --dataset foursquare_nyc --model TPG

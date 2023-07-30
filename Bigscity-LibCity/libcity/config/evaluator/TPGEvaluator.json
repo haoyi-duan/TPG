@@ -1,0 +1,6 @@
+{
+    "evaluator_config": {
+        "metrics": ["HR", "NDCG", "Recall"],
+        "topk": [1, 5, 10]
+    }
+}
