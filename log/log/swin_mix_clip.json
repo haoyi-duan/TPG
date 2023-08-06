@@ -1,0 +1,44 @@
+{
+    "model_config": {
+        "LOD": 17,
+        "location_embedding_dim": 50,
+        "num_layers_encoder": 2,
+        "dropout": 0.5,
+
+        "region_embedding_dim": 50,
+        "num_heads_encoder": 1,
+
+        "user_embedding_dim": 50, 
+        "time_embedding_dim": 50,
+
+        "hidden_dim_encoder": 0,
+        "num_heads_decoder": 0,
+
+        "target_interval": 0,
+
+        "extra_config": {
+            "position_encoding": "transformer",
+            "@position_encoding_choice": ["embedding", "transformer", "transformer_learnable"],
+            "user_location_only": false,
+            "user_embedding": true,
+            "size_sqrt_regularize": true,
+            "use_attention_as_decoder": true,
+            "embedding_fusion": "concat"
+        },
+        "use_geo_encoder": true,
+        "use_time_query": true,
+        "use_time_loss": false,
+        "loss_embedding_fusion": "multiply",
+        "@loss_embedding_fusion_choice": ["multiply", "mean"],
+        "sampler": "RandomSampler",
+        "@sampler_choice": ["KNNSampler", "HardSampler", "RandomSampler", "NonSampler"],
+        "matching_strategy": "mix",
+        "@matching_strategy_choice": ["mix", "divide", "poi_time"],
+        "clip": true,
+        "N_nearest": true,
+        "use_swin": true,
+        "swin_type": "mix",
+        "@swin_type_choice": ["cross", "grid", "mix"],
+        "pure_time_prompt": false
+    }
+} 
